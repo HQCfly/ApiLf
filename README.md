@@ -33,7 +33,7 @@ api/urls.py :
 request.version 获取版本  
 			
 	
-#3. vue+rest framework
+# 3. vue+rest framework
 ## 3.1 vue: 
 - 路由 + 组件 
 - axios发送ajax请求
