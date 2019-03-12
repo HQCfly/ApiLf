@@ -33,7 +33,7 @@ api/urls.py :
 request.version 获取版本  
 			
 	
-#3. vue+rest framework
+# 3. vue+rest framework
 ## 3.1 vue: 
 - 路由 + 组件 
 - axios发送ajax请求
@@ -53,3 +53,44 @@ request.version 获取版本
 
 			# 允许你发送DELETE,PUT
 			response['Access-Control-Allow-Methods'] = "DELETE,PUT"
+			
+			
+			
+# 4. 序列化
+	- source
+	- method 
+# 5.推荐课程，用户拦截,拦截器
+## 5.1 VUE:
+- 课程列表：this.$axios + this 
+- 课程详细：this.$axios + this 
+- 用户登录：
+    - this.$axios
+	- this 
+	- 跨域简单和复杂请求
+	- vuex做全局变量
+	- vuex-cookies 
+- 微职位 
+	- 拦截器
+	- 携带token 
+			
+PS: api可以同一放在store中保存
+			
+## 5.2 API:
+- 课程列表 
+    - 序列化：source='get_level_display'
+- 课程详细：
+    - 序列化：source='get_level_display'
+    - 序列化：method
+- 用户登录 
+    - update_or_create
+- 微职位 
+    - 认证组件 
+			
+- 关联组件：
+    - 版本
+    - 解析器
+    - 渲染器
+    - 序列化 
+    - 认证组件 
+    - 视图 
+    - 路由 

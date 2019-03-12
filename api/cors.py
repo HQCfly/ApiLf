@@ -16,22 +16,25 @@ class MiddlewareMixin:
             response = self.process_response(request, response)
         return response
 
+
 class CORSMiddleware(MiddlewareMixin):
+    def process_response(self, request, response):
+        # 添加响应头
 
-    def process_response(self,request,response):
+        # 允许你的域名来获取我的数据
+        # response['Access-Control-Allow-Origin'] = "*"
 
-        #添加响应头
 
-        #允许你的域名来获取我的数据
+        # 允许你携带Content-Type
+        # response['Access-Control-Request-Headers'] = "Content-Type"
+
+
+        # 允许你发送delete,put
+        # response['Access-Control-Request-Method'] = "GET,POST"
         response['Access-Control-Allow-Origin'] = "*"
 
-
-        #允许你携带Content-Type
-        response['Access-Control-Request-Headers'] = "Content-Type"
-
-
-        #允许你发送delete,put
-        response['Access-Control-Request-Method'] = "GET,POST"
-
+        if request.method == "OPTIONS":
+            response['Access-Control-Allow-Headers'] = "Content-Type"
+            response['Access-Control-Allow-Methods'] = "PUT,DELETE"
 
         return response

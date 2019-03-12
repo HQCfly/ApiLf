@@ -122,11 +122,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-TEMPLATE_DIRS = (os.path.join(BASE_DIR,  'templates'),)
+# TEMPLATE_DIRS = (os.path.join(BASE_DIR,  'templates'),)
 REST_FRAMEWORK = {
-    'DEFAULT_RENDERER_CLASSES':['rest_framework.renderers.JSONRenderer','rest_framework.renderers.BrowsableAPIRenderer'],
-    'DEFAULT_VERSIONING_CLASS':'rest_framework.versioning.QueryParameterVersioning',
-    'ALLOWED_VERSIONS':['v1','v2'],
-    'VERSION_PARAM':'version',
-    'DEFAULT_VERSIONS':'v1',
+    'DEFAULT_RENDERER_CLASSES':['rest_framework.renderers.JSONRenderer','rest_framework.renderers.BrowsableAPIRenderer',],
+
+    'DEFAULT_VERSIONING_CLASS':'rest_framework.versioning.URLPathVersioning',
+    'ALLOWED_VERSIONS':['v1','v2'], # 允许的版本
+    'VERSION_PARAM':'version', # 参数
+    'DEFAULT_VERSION':'v1', # 默认版本
+
 }
